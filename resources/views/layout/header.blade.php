@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,20 +11,18 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> -->
-    <!-- Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-        integrity="undefined" crossorigin="anonymous"> -->
-
+    <link href="/css/app.css" rel="stylesheet" >
     <style>
         body {
             font-family: 'Nunito', sans-serif;
         }
-
+        .bckground-doctor{
+            background-image: url("{{ asset('images/docteur.jpg') }}");
+            min-height: 120px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size:cover;
+        }
     </style>
 </head>
-
 <body class="container">
-@yield('form')

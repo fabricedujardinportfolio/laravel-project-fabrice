@@ -1,3 +1,5 @@
-@include('parts/header')
-@include('section/form')
-@include('parts/footer')
+@include('layout/header')
+@include('layout/parts/head')
+@include('layout/parts/backgroundDoctor')
+@include('layout/parts/form')
+@include('layout/footer')

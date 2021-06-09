@@ -14,8 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('reservation',['name' => 'DEV WEB']);
 });
-Route::get('/reservation', function () {
-    return view('reservation', ['name' => 'DEV WEB']);
+Route::post('/', function () {
+    return view('reservation');
 });
+Route::get('/search', function () {
+    return view('search');
+});
+Route::get('/professional-workplace', function () {
+    return view('professional-workplace');
+});
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+
