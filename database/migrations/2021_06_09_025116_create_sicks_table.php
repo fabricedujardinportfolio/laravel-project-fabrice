@@ -16,6 +16,8 @@ class CreateSicksTable extends Migration
         Schema::create('sicks', function (Blueprint $table) {
             $table->id();
             $table->text('name');
+            $table->string('email');
+            $table->timestamps();
         });
     }
 

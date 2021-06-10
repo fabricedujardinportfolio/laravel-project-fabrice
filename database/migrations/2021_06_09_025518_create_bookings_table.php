@@ -15,11 +15,13 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->text('booking_at');
-            $table->text('info');
+            $table->text('booking_at')->nullable();
+            $table->text('info')->nullable();
             $table->foreignId('doctor_id')->constrained('doctors');
             $table->foreignId('sick_id')->constrained('sicks');
+            $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -29,6 +31,10 @@ class CreateBookingsTable extends Migration
      */
     public function down()
     {
+        Schema::table("bookings" ,function(Blueprint $table){
+            $table->dropConstrainedForeignId("doctor_id");
+            $table->dropConstrainedForeignId("sick_id");
+        });
         Schema::dropIfExists('bookings');
     }
 }

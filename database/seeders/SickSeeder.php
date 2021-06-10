@@ -16,12 +16,24 @@ class SickSeeder extends Seeder
     {
         //
         DB::table('sicks')->insert([
-        ['name' => 'arthur'],
-        ['name' => 'boby'],
-        ['name' => 'boule'],
-        ['name' => 'toto'],
-        ['name' => 'joseph'],
-        ['name' => 'michel'],]
+        ['name' => 'arthur',
+         'email'=> 'arthur@gmail.com'
+        ],
+        ['name' => 'boby',
+        'email'=> 'boby@gmail.com'
+       ],
+        ['name' => 'boule',
+        'email'=> 'boule@gmail.com'
+       ],
+        ['name' => 'toto',
+        'email'=> 'toto@gmail.com'
+       ],
+        ['name' => 'joseph',
+        'email'=> 'joseph@gmail.com'
+       ],
+        ['name' => 'michel',
+        'email'=> 'michel@gmail.com'
+       ],]
     );
     }
 }

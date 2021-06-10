@@ -11,14 +11,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet" >
     <style>
         body {
             font-family: 'Nunito', sans-serif;
         }
         .bckground-doctor{
             background-image: url("{{ asset('images/docteur.jpg') }}");
-            min-height: 120px;
+            min-height: 45px;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size:cover;
@@ -26,3 +25,4 @@
     </style>
 </head>
 <body class="container">
+@yield('contenue')

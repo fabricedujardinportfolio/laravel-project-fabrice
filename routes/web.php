@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\CreateReservationController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ProfessionalWorkplaceController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,20 +18,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('reservation',['name' => 'DEV WEB']);
-});
-Route::post('/', function () {
-    return view('reservation');
-});
-Route::get('/search', function () {
-    return view('search');
-});
-Route::get('/professional-workplace', function () {
-    return view('professional-workplace');
-});
-Route::get('/faq', function () {
-    return view('faq');
-});
+Route::get('/', [ReservationController::class,"index"])->name('accueil');
+Route::post('/', [ReservationController::class,"recherche"])->name('accueilPlusPost');
+
+Route::get('/search', [SearchController::class,"rootSearch"])->name('search');
+
+Route::get('/reservations/{id}',[CreateReservationController::class,"print"])->name('reservations');
+Route::post('/reservations',[CreateReservationController::class,"add"])->name('reservations');
+
+Route::get('/professional-workplace', [ProfessionalWorkplaceController::class,"rootPro"] )->name('professional-workplace');
+
+Route::get('/faq', [FaqController::class,"rootFaq"])->name('faq');
 
 

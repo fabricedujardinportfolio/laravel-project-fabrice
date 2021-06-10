@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Sick;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,11 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Sick::factory(30)->create();
+        
         $this->call([
-            BookingSeeder::class,
             DoctorSeeder::class,
             SickSeeder::class,
+            BookingSeeder::class,
         ]);
     }
 }
